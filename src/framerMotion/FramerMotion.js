@@ -84,13 +84,15 @@ export const svgVariant = {
 };
 export const pathVariant = {
   hidden: {
-    opacity: 0,
+    opacity: 0.1,
     pathLength: 0
   },
   visible: {
     opacity: 1,
-    pathLength: 1,
+    pathLength: [0, 1],
     transition: {
+      repeatType: "mirror",
+      repeat: Infinity,
       duration: 3,
       ease: "easeInOut"
     }
