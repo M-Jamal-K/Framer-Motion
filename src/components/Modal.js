@@ -1,10 +1,11 @@
+import ReactDom from "react-dom";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { modalVarients, childVarients } from "../framerMotion/FramerMotion";
 
 const Modal = ({ showModal, setShowModal }) => {
-  return (
+  return ReactDom.createPortal((
     <>
       <AnimatePresence mode="wait">
         {showModal && (
@@ -25,7 +26,6 @@ const Modal = ({ showModal, setShowModal }) => {
         )}
       </AnimatePresence>
     </>
-  );
+  ),document.querySelector("#modal"))
 };
-
 export default Modal;
